@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thailand's 2030 EMS Vision: A New Architecture for National Resilience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; 
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 450px;
+            }
+        }
+        .stat-card {
+            background-color: #003f5c;
+            color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            color: #ffa600;
+        }
+        .stat-label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+        }
+        h1 {
+            color: #003f5c;
+        }
+        h2 {
+            color: #58508d;
+        }
+        h3 {
+            color: #003f5c;
+        }
+        .pillar-card {
+            background-color: white;
+            border-left: 5px solid #003f5c;
+            transition: box-shadow 0.3s ease;
+        }
+        .pillar-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .pillar-card-2 { border-color: #bc5090; }
+        .pillar-card-3 { border-color: #ff6361; }
+        
+        .flow-step {
+            @apply text-center p-4 bg-gray-100 rounded-lg shadow w-full md:w-auto;
+        }
+        .flow-arrow {
+            @apply text-gray-500 text-4xl font-bold flex items-center justify-center mx-4 my-2 md:my-0;
+        }
+        .timeline-item {
+            @apply relative pl-8 md:pl-0 md:flex-1 md:text-center;
+        }
+        .timeline-dot {
+            @apply absolute left-0 top-1 w-6 h-6 rounded-full shadow-md md:relative md:left-auto md:top-auto md:mx-auto md:mb-3;
+        }
+        .timeline-line {
+            @apply absolute left-3 top-1 w-0.5 h-full bg-gray-300 md:hidden;
+        }
+        .phase-1 .timeline-dot { background-color: #003f5c; }
+        .phase-2 .timeline-dot { background-color: #bc5090; }
+        .phase-3 .timeline-dot { background-color: #ff6361; }
+        
+        .cta-button {
+            background-color: #ffa600;
+            color: #003f5c;
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #ffc35a;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <section id="hero" class="text-center bg-white rounded-lg shadow-lg p-8 md:p-12 mb-10">
+            <h1 class="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4">A New Architecture for National Resilience</h1>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-700 mb-6">Thailand's 2030 EMS Vision</h2>
+            <p class="text-lg md:text-xl font-semibold max-w-4xl mx-auto" style="color: #58508d;">
+                Redefining Emergency Medical Services as an Indispensable Pillar of National Security and Economic Stability.
+            </p>
+        </section>
+
+        <section id="paradox" class="mb-10">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-6">The Current Paradox: Vast Scale, Structural Fragmentation</h2>
+                <p class="text-lg text-center max-w-3xl mx-auto mb-8">
+                    Thailand's EMS system is a story of profound contrasts. While its scale is impressive, its decentralized and fragmented nature creates critical strategic weaknesses that must be addressed.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat-card">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Certified Units</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100,000+</div>
+                        <div class="stat-label">Personnel</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">77</div>
+                        <div class="stat-label">Provinces Covered</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Strategic Fissures</h3>
+                        <p class="mb-6">
+                            This fragmentation results in significant challenges that constrain our capabilities. The system is reactive, not proactive, and its financial structure is built for compensation, not strategic investment.
+                        </p>
+                        <ul class="list-none space-y-3">
+                            <li class="flex items-center text-lg"><span class="inline-block w-3 h-3 rounded-full mr-3" style="background-color: #ff6361;"></span>Non-Uniform Operating Standards</li>
+                            <li class="flex items-center text-lg"><span class="inline-block w-3 h-3 rounded-full mr-3" style="background-color: #ff6361;"></span>Pervasive Data Inconsistency</li>
+                            <li class="flex items-center text-lg"><span class="inline-block w-3 h-3 rounded-full mr-3" style="background-color: #ffa600;"></span>Reactive Data Logging (NDEMS 1.0)</li>
+                            <li class="flex items-center text-lg"><span class="inline-block w-3 h-3 rounded-full mr-3" style="background-color: #ffa600;"></span>OPEX-Focused, CAPEX-Constrained Budget</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="constraintsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="urgency" class="mb-10">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-6">The Tipping Point: Why the Status Quo is Unsustainable</h2>
+                <p class="text-lg text-center max-w-3xl mx-auto mb-8">
+                    The current operational model is buckling under compounding pressures. We face a future of rising demands and increasing complexity. The cost of inaction is too high.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Compounding Pressures</h3>
+                        <p class="mb-6">
+                            A combination of domestic and external factors are increasing the volume and complexity of the EMS mission exponentially.
+                        </p>
+                        <div class="chart-container">
+                            <canvas id="pressuresChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">The Risks of Inaction</h3>
+                        <p class="mb-6">
+                            Failing to act decisively will lead to severe consequences, impacting public safety, economic stability, and our national reputation.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-lg flex items-start" style="background-color: #ff6361; color: white;">
+                                <span class="text-2xl font-bold mr-4">!</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">Declining Patient Survival Rates</h4>
+                                    <p class="text-sm">Inability to manage increased volume and complexity effectively.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg flex items-start" style="background-color: #ffa600; color: #003f5c;">
+                                <span class="text-2xl font-bold mr-4">!</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">Erosion of National Image</h4>
+                                    <p class="text-sm">Tarnishing Thailand's reputation as a safe destination for tourism and investment.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg flex items-start bg-gray-200 text-slate-700">
+                                <span class="text-2xl font-bold mr-4">!</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">Limited Disaster Capability</h4>
+                                    <p class="text-sm">Reduced capacity to manage mass-casualty incidents, pandemics, or natural disasters.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision" class="mb-10 text-center">
+            <h2 class="text-3xl font-bold mb-6">The 2030 Vision: The Three Pillars of Reform</h2>
+            <p class="text-lg max-w-3xl mx-auto mb-8">
+                To transcend these limitations, we propose a transformative vision built upon three foundational, interconnected pillars designed to create a robust, intelligent, and sustainable EMS ecosystem.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="pillar-card p-6 rounded-lg shadow">
+                    <div class="text-5xl font-black mb-3" style="color: #003f5c;">1</div>
+                    <h3 class="text-xl font-bold mb-2">Integrated, AI-Driven Service Ecosystem</h3>
+                    <p class="text-slate-600">Fusing global innovation with local expertise to make our service intelligent, seamless, and cohesive.</p>
+                </div>
+                <div class="pillar-card pillar-card-2 p-6 rounded-lg shadow">
+                    <div class="text-5xl font-black mb-3" style="color: #bc5090;">2</div>
+                    <h3 class="text-xl font-bold mb-2">Future-Proof Digital & Physical Infrastructure</h3>
+                    <p class="text-slate-600">Building a secure, resilient, and unified backbone with 5G/6G and satellite connectivity.</p>
+                </div>
+                <div class="pillar-card pillar-card-3 p-6 rounded-lg shadow">
+                    <div class="text-5xl font-black mb-3" style="color: #ff6361;">3</div>
+                    <h3 class="text-xl font-bold mb-2">Reformed Budgetary Framework</h3>
+                    <p class="text-slate-600">Shifting from reactive compensation to a strategic, investment-oriented structure focused on outcomes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pillars-deep-dive" class="mb-10 space-y-8">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h3 class="text-2xl font-bold mb-6"><span class="font-black" style="color: #003f5c;">PILLAR 1:</span> AI-Driven Service Ecosystem</h3>
+                <p class="text-lg max-w-3xl mx-auto mb-8 text-center">
+                    We will replace 85 siloed command centers with a single Virtual National Emergency Operations Nerve Center, powered by AI to ensure the fastest, most appropriate response.
+                </p>
+                <div class="p-6 bg-slate-50 rounded-lg">
+                    <h4 class="text-xl font-bold text-center mb-6">The New "Smart Command" Patient Journey</h4>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-center space-y-4 md:space-y-0 md:space-x-4">
+                        <div class="flow-step">
+                            <div class="text-3xl">📞</div>
+                            <div class="font-bold">Emergency Call</div>
+                        </div>
+                        <div class="flow-arrow transform md:rotate-0">→</div>
+                        <div class="flow-step" style="background-color: #d1c4e9; color: #58508d;">
+                            <div class="text-3xl">🧠</div>
+                            <div class="font-bold">AI Predictive Analytics</div>
+                            <div class="text-sm">Forecasts hotspots</div>
+                        </div>
+                        <div class="flow-arrow transform md:rotate-0">→</div>
+                        <div class="flow-step" style="background-color: #e1bee7; color: #bc5090;">
+                            <div class="text-3xl">🎯</div>
+                            <div class="font-bold">Automated Dispatch</div>
+                            <div class="text-sm">Nearest, most appropriate unit</div>
+                        </div>
+                        <div class="flow-arrow transform md:rotate-0">→</div>
+                        <div class="flow-step" style="background-color: #ffcdd2; color: #ff6361;">
+                            <div class="text-3xl">🚑</div>
+                            <div class="font-bold">5G/LEO Ambulance</div>
+                            <div class="text-sm">Real-time Telemedicine</div>
+                        </div>
+                        <div class="flow-arrow transform md:rotate-0">→</div>
+                        <div class="flow-step" style="background-color: #c8e6c9; color: #388e3c;">
+                            <div class="text-3xl">🏥</div>
+                            <div class="font-bold">Hospital Ready</div>
+                            <div class="text-sm">Data received in advance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h3 class="text-2xl font-bold mb-6"><span class="font-black" style="color: #bc5090;">PILLAR 2:</span> Future-Proof Infrastructure</h3>
+                <p class="text-lg max-w-3xl mx-auto mb-8 text-center">
+                    The new NDEMS 2.0 platform will be a cloud-native, AI-driven engine. It will be supported by ubiquitous, resilient connectivity to ensure 100% coverage.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center p-6 bg-slate-50 rounded-lg space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="text-center p-6 rounded-lg border-4" style="border-color: #003f5c;">
+                        <div class="text-3xl">🏙️</div>
+                        <h4 class="text-xl font-bold mt-2">Urban & 5G/6G</h4>
+                        <p class="text-slate-600">Low-latency video & data for urban zones.</p>
+                    </div>
+                    
+                    <div class="text-center p-8 rounded-full shadow-xl" style="background-color: #58508d; color: white;">
+                        <div class="text-3xl">☁️</div>
+                        <h4 class="text-2xl font-black">NDEMS 2.0</h4>
+                        <p class="font-semibold">AI-Driven Core</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-lg border-4" style="border-color: #bc5090;">
+                        <div class="text-3xl">🛰️</div>
+                        <h4 class="text-xl font-bold mt-2">Remote & LEO Satellite</h4>
+                        <p class="text-slate-600">Guaranteed link for remote, maritime & disaster zones.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h3 class="text-2xl font-bold mb-6"><span class="font-black" style="color: #ff6361;">PILLAR 3:</span> Strategic Budget Reform</h3>
+                <p class="text-lg max-w-3xl mx-auto mb-8 text-center">
+                    We must shift our financial philosophy from a reactive compensation fund to a proactive, blended funding structure that rewards quality and efficiency.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-bold text-center mb-4">Current Budget Model</h4>
+                        <div class="chart-container" style="max-width: 400px; height: 300px;">
+                            <canvas id="budgetBeforeChart"></canvas>
+                        </div>
+                        <p class="text-center mt-4 text-slate-600">Almost exclusively focused on operational compensation (OPEX), with no room for strategic investment (CAPEX).</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-center mb-4">Reformed Budget Model</h4>
+                        <div class="chart-container" style="max-width: 400px; height: 300px;">
+                            <canvas id="budgetAfterChart"></canvas>
+                        </div>
+                        <p class="text-center mt-4 text-slate-600">A blended model using direct budget for CAPEX, PPPs for tech, and performance-based funding to drive quality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roi" class="mb-10">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-6">The Economics of Security: Measuring Our ROI</h2>
+                <p class="text-lg text-center max-w-3xl mx-auto mb-8">
+                    This is an investment in the nation's long-term safety, security, and stability. The return on investment is measured across three critical dimensions.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="roiChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="list-none space-y-4">
+                            <li>
+                                <h4 class="text-xl font-bold" style="color: #003f5c;">Social ROI</h4>
+                                <p class="text-slate-600">Reduced mortality and disability rates, lower long-term healthcare burdens, and enhanced public safety and trust.</p>
+                            </li>
+                            <li>
+                                <h4 class="text-xl font-bold" style="color: #bc5090;">Economic ROI</h4>
+                                <p class="text-slate-600">Strengthened tourism industry, attraction of foreign investment, and minimized economic impact from major disasters.</p>
+                            </li>
+                            <li>
+                                <h4 class="text-xl font-bold" style="color: #ffa600;">Geopolitical ROI</h4>
+                                <p class="text-slate-600">Positioning Thailand as the undisputed regional leader in emergency management and public health, enhancing our soft power.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="mb-10">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-6">A Phased Roadmap to 2030</h2>
+                <p class="text-lg text-center max-w-3xl mx-auto mb-8">
+                    To ensure this monumental transformation is manageable and effectively de-risked, we propose a pragmatic, multi-year phased approach.
+                </p>
+                <div class="relative md:flex md:justify-between">
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-300" style="transform: translateY(-50%);"></div>
+                    <div class="timeline-item phase-1">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-xl font-bold mb-2">Phase 1 (Years 1-2)</h4>
+                        <h5 class="text-lg font-semibold mb-2" style="color: #003f5c;">Foundation & Pilot</h5>
+                        <p class="text-slate-600">Secure initial funding, finalize PPPs, launch NDEMS 2.0 & 5G Ambulance pilots, and commence Training Center design.</p>
+                    </div>
+                    <div class="timeline-item phase-2">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-xl font-bold mb-2">Phase 2 (Years 3-5)</h4>
+                        <h5 class="text-lg font-semibold mb-2" style="color: #bc5090;">Nationwide Expansion</h5>
+                        <p class="text-slate-600">Full-scale NDEMS 2.0 rollout, onboard all 10,000 units, and launch National Training Center curriculum.</p>
+                    </div>
+                    <div class="timeline-item phase-3">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-xl font-bold mb-2">Phase 3 (Years 6-10)</h4>
+                        <h5 class="text-lg font-semibold mb-2" style="color: #ff6361;">Optimization & Innovation</h5>
+                        <p class="text-slate-600">Focus on advanced AI applications, R&D, and establishing Thailand as a Regional Center of Excellence (COE).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="conclusion" class="text-center bg-white rounded-lg shadow-lg p-8 md:p-12">
+            <h1 class="text-3xl md:text-4xl font-black mb-6">A Clarion Call for a Safer, More Resilient Thailand</h1>
+            <p class="text-lg max-w-3xl mx-auto mb-8">
+                This transformation is not an optional upgrade. It is a profound, once-in-a-generation investment in the safety of every citizen and visitor, the stability of our economy, and the future of the nation itself.
+            </p>
+            <h3 class="text-2xl font-bold mb-4">Critical Success Factors</h3>
+            <p class="text-base max-w-4xl mx-auto mb-6 text-slate-600">
+                The success of this comprehensive vision hinges on **three non-negotiable foundations** that must be secured at the highest level of government and stakeholder engagement.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+                <div class="p-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] text-center" style="background-color: #f0f4f7;">
+                    <div class="text-4xl mb-3">👑</div> 
+                    <h4 class="font-black text-xl mb-1" style="color: #003f5c;">Unwavering Political Will</h4>
+                    <p class="text-sm text-slate-600">Requires top-level commitment to prioritize national resilience over short-term political cycles.</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] text-center" style="background-color: #f0f4f7;">
+                    <div class="text-4xl mb-3">🤝</div> 
+                    <h4 class="font-black text-xl mb-1" style="color: #58508d;">Inter-ministerial Cooperation</h4>
+                    <p class="text-sm text-slate-600">Essential for seamless integration between Public Health, Digital Economy, and other vital sectors.</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] text-center" style="background-color: #f0f4f7;">
+                    <div class="text-4xl mb-3">⚙️</div> 
+                    <h4 class="font-black text-xl mb-1" style="color: #bc5090;">Robust Change Management</h4>
+                    <p class="text-sm text-slate-600">Securing buy-in and upskilling across all 10,000 operational units and 100,000 personnel.</p>
+                </div>
+            </div>
+            
+            <a href="#hero" class="cta-button text-xl p-4 md:p-6 shadow-xl hover:shadow-2xl">
+                LAUNCH NATIONAL RESILIENCE (PHASE 1)
+            </a>
+        </section>
+
+    </main>
+    
+    <footer class="text-center p-6 text-slate-500 text-sm">
+        <p>&copy; 2025 Thailand National Institute for Emergency Medicine (NIEMS) Visionary Plan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        
+            const primaryColor = '#003f5c';
+            const color1 = '#58508d';
+            const color2 = '#bc5090';
+            const color3 = '#ff6361';
+            const color4 = '#ffa600';
+            const textGray = '#64748b';
+
+            function wrapLabels(label, maxWidth) {
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        if (currentLine.length > 0) {
+                            lines.push(currentLine.trim());
+                        }
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            }
+
+            const baseTooltipCallback = {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    if (!item) return '';
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    }
+                    return label;
+                }
+            };
+            
+            const baseChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: textGray,
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: baseTooltipCallback,
+                        bodyFont: {
+                            family: "'Inter', sans-serif"
+                        },
+                        titleFont: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: textGray,
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: textGray,
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
+                        },
+                        grid: {
+                            color: '#e2e8f0'
+                        }
+                    }
+                }
+            };
+            
+            const baseDoughnutOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: textGray,
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: baseTooltipCallback,
+                        bodyFont: {
+                            family: "'Inter', sans-serif"
+                        },
+                        titleFont: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                }
+            };
+            
+            const constraintsCtx = document.getElementById('constraintsChart');
+            if (constraintsCtx) {
+                const rawLabels = ['Data Inconsistency', 'Non-Uniform Standards', 'Reactive NDEMS 1.0', 'OPEX-Focused Budget'];
+                const processedLabels = rawLabels.map(l => l.length > 16 ? wrapLabels(l, 16) : l);
+                
+                new Chart(constraintsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: processedLabels,
+                        datasets: [{
+                            label: 'Level of Constraint (Higher is worse)',
+                            data: [90, 85, 80, 95],
+                            backgroundColor: [color1, color2, color3, color4],
+                            borderRadius: 4
+                        }]
+                    },
+                    options: { ...baseChartOptions, plugins: { ...baseChartOptions.plugins, legend: { display: false } } }
+                });
+            }
+            
+            const pressuresCtx = document.getElementById('pressuresChart');
+            if (pressuresCtx) {
+                const rawLabels = ['Rising Public Expectations', 'Rapid Urbanization', 'Explosive Tourism Growth', 'Emergency Complexity (Disasters, Pandemics)'];
+                const processedLabels = rawLabels.map(l => l.length > 16 ? wrapLabels(l, 16) : l);
+
+                new Chart(pressuresCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: processedLabels,
+                        datasets: [{
+                            label: 'Impact & Urgency Score',
+                            data: [70, 75, 85, 90],
+                            backgroundColor: [color1, color2, color3, color4],
+                            borderRadius: 4
+                        }]
+                    },
+                    options: { ...baseChartOptions, plugins: { ...baseChartOptions.plugins, legend: { display: false } } }
+                });
+            }
+
+            const budgetBeforeCtx = document.getElementById('budgetBeforeChart');
+            if (budgetBeforeCtx) {
+                new Chart(budgetBeforeCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['OPEX (Compensation)', 'CAPEX (Investment)'],
+                        datasets: [{
+                            data: [95, 5],
+                            backgroundColor: [color1, '#e0e0e0'],
+                            borderColor: '#ffffff',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: baseDoughnutOptions
+                });
+            }
+            
+            const budgetAfterCtx = document.getElementById('budgetAfterChart');
+            if (budgetAfterCtx) {
+                new Chart(budgetAfterCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Performance-Based OPEX', 'Direct CAPEX (Govt)', 'Specialized CAPEX (PPP)'],
+                        datasets: [{
+                            data: [50, 30, 20],
+                            backgroundColor: [color1, color3, color4],
+                            borderColor: '#ffffff',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: baseDoughnutOptions
+                });
+            }
+            
+            const roiCtx = document.getElementById('roiChart');
+            if (roiCtx) {
+                new Chart(roiCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Social ROI', 'Economic ROI', 'Geopolitical ROI'],
+                        datasets: [{
+                            label: 'Projected National Impact',
+                            data: [90, 85, 95],
+                            fill: true,
+                            backgroundColor: 'rgba(188, 80, 144, 0.2)',
+                            borderColor: color2,
+                            pointBackgroundColor: color2,
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: color2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: textGray,
+                                    font: {
+                                        family: "'Inter', sans-serif"
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: baseTooltipCallback,
+                                bodyFont: {
+                                    family: "'Inter', sans-serif"
+                                },
+                                titleFont: {
+                                    family: "'Inter', sans-serif"
+                                }
+                            }
+                        },
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 100,
+                                grid: {
+                                    color: '#e2e8f0'
+                                },
+                                angleLines: {
+                                    color: '#e2e8f0'
+                                },
+                                pointLabels: {
+                                    font: {
+                                        size: 14,
+                                        family: "'Inter', sans-serif",
+                                        weight: '600'
+                                    },
+                                    color: primaryColor
+                                },
+                                ticks: {
+                                    backdropColor: 'transparent',
+                                    color: textGray
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
